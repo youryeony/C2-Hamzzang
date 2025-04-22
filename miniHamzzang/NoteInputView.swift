@@ -19,10 +19,10 @@ struct NoteInputView: View {
         VStack(spacing: 0) {
             // MARK: 햄짱이 캐러셀
 
-            HamCarouselView(hamzzangName: $selectedHamzzang.name)
+            HamCarouselView(hamzzangName: .constant(selectedHamzzang.name))
             
             // MARK: Note 입력창
-            
+
             VStack {
                 HStack {
                     Text(" #오늘실패완료")
