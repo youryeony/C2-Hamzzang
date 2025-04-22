@@ -1,13 +1,9 @@
-//
-//  HamzzangListView.swift
-//  miniHamzzang
-//
-//  Created by Doyeon Nam on 4/21/25.
-//
-
+import SwiftData
 import SwiftUI
 
 struct HamzzangListView: View {
+    @Binding var selectedHamzzang: Hamzzang
+
     var body: some View {
         Text("Where are you, Hamzzang?")
             .multilineTextAlignment(.center)
@@ -16,5 +12,6 @@ struct HamzzangListView: View {
 }
 
 #Preview {
-    HamzzangListView()
+    @State var previewHamzzang = Hamzzang(name: "프리뷰 햄짱")
+    return HamzzangListView(selectedHamzzang: $previewHamzzang)
 }

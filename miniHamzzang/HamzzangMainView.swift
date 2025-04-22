@@ -36,13 +36,8 @@ struct HamzzangMainView: View {
             VStack(spacing: 0) {
                 // MARK: 상단 아이콘 바
 
-//                Button {
-//                    print(notes)
-//                } label: {
-//                    Text("HIHIHIHIIHIHI").font(.system(size: 50))
-//                }
-
-                TopBarView(selectedHamzzang: Hamzzang())
+                TopBarView(selectedHamzzang: hamzzang)
+                // 새 인스턴스가 아닌 현재 햄짱이 이름,ID가 들어오도록 Hamzzang() 대신 hamzzang
                 ScrollView {
                     Spacer()
                     VStack(spacing: 20) {
