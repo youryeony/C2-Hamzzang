@@ -2,9 +2,9 @@ import SwiftUI
 
 struct HamCarouselView: View {
     @Binding var hamzzangName: String
-    var limit: Int = 10
     var onLeftTap: () -> Void = {}
     var onRightTap: () -> Void = {}
+    var isEditable: Bool = true
 
     var body: some View {
         HStack {
@@ -12,14 +12,9 @@ struct HamCarouselView: View {
                 Image("arrowleft")
             }
 
-            TextField("이름을 입력하세요.", text: $hamzzangName)
+            Text(hamzzangName)
                 .padding(.horizontal, 30)
                 .multilineTextAlignment(.center)
-                .onChange(of: hamzzangName) {
-                    if hamzzangName.count > limit {
-                        hamzzangName = String(hamzzangName.prefix(limit))
-                    }
-                }
 
             Button(action: onRightTap) {
                 Image("arrowright")
