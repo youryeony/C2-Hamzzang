@@ -44,9 +44,9 @@ struct NoteListView: View {
 
             // MARK: 노트 작성 창
 
-            TextField("새로운 노트를 입력하세요", text: $hamNote, axis: .vertical)
+            TextField("오늘은 어떤 실패 근육을 키웠지..?", text: $hamNote, axis: .vertical)
                 .foregroundColor(.black)
-                .font(.custom("DungGeunMo", size: 18))
+                .font(.custom("DungGeunMo", size: 16))
                 .lineSpacing(5)
                 .padding(20)
                 .overlay {
