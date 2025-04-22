@@ -63,7 +63,7 @@ struct TopBarView: View {
                     NoteEditView(note: note, selectedHamzzang: .constant(selectedHamzzang))
                 }
             }
-            .fullScreenCover(isPresented: $isPresentingNoteList) {
+            .sheet(isPresented: $isPresentingNoteList) {
                 NoteListView(selectedHamzzang: .constant(selectedHamzzang))
             }
     }

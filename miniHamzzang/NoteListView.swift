@@ -7,14 +7,6 @@ struct NoteListView: View {
     @State private var hamNote: String = ""
     @Query private var notes: [Note] // SwiftData에서 필터링된 Note 가져오기
 
-//    init(selectedHamzzang: Binding<Hamzzang>) {
-//        self._selectedHamzzang = selectedHamzzang
-//        // 이 햄짱이 Note만 필터링해서 가져오기
-//        self._notes = Query(filter: #Predicate<Note> {
-//            $0.hamzzang.id == selectedHamzzang.wrappedValue.id
-//        })
-//    }
-
     var body: some View {
         VStack(spacing: 0) {
             // MARK: 햄짱이 캐러셀
@@ -32,9 +24,9 @@ struct NoteListView: View {
 
 //                Button(action: {
 //                    sortByNewest.toggle()
-//                    // 정렬 기준 다시 적용 (정렬방식 동적으로 구현 시 여기에 조건 넣음)
+//                    // 정렬 기준 다시 적용(정렬방식 동적으로 구현 시 여기에 조건 넣기)
 //                }) {
-//                    Image(sortByNewest ? "newestSortIcon" : "oldestSortIcon") // 여기에 비트맵 이미지 활용
+//                    Image(sortByNewest ? "newestSortIcon" : "oldestSortIcon") // 비트맵 이미지 넣기
 //                        .resizable()
 //                        .frame(width: 24, height: 24)
 //                }
