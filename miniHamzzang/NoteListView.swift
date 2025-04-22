@@ -7,6 +7,9 @@ struct NoteListView: View {
     @State private var hamNote: String = ""
     @Query private var notes: [Note] // SwiftData에서 필터링된 Note 가져오기
 
+    @State private var isPresentingNoteEdit = false
+    @State private var selectedNote: Note? = nil
+
     var body: some View {
         VStack(spacing: 0) {
             // MARK: 햄짱이 캐러셀
@@ -53,8 +56,8 @@ struct NoteListView: View {
             List {
                 ForEach(notes) { note in
                     Button {
-                        // 노트 수정 뷰로 이동
-                    } label: {
+                        selectedNote = note
+                        isPresentingNoteEdit = true                    } label: {
                         VStack(alignment: .leading, spacing: 4) {
                             Text(note.content)
                                 .font(.custom("DungGeunMo", size: 18))

@@ -47,6 +47,7 @@ struct NoteEditView: View {
             }
         }.padding(.horizontal, 25)
             .padding(.top, 20)
+        
 
         // MARK: 완료, 삭제, 취소 버튼
 
@@ -56,7 +57,7 @@ struct NoteEditView: View {
                 try? modelContext.save()
                 dismiss()
             } label: {
-                Text("완료")
+                Text("완료") 
                     .font(.custom("DungGeunMo", size: 20))
                     .padding(.horizontal, 20)
                     .padding(.vertical, 10)

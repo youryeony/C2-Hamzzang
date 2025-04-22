@@ -5,11 +5,12 @@ struct TopBarView: View {
     var selectedHamzzang: Hamzzang
     @Query var notes: [Note]
     @Environment(\.modelContext) private var modelContext // SwiftData가 자동으로 주입해주는 DB 접근권한
+    
     @State private var isPresentingNoteInput = false
     @State private var isPresentingNoteEdit = false
     @State private var todayNote: Note? = nil
     @State private var isPresentingNoteList = false
-
+    
     var body: some View {
         HStack {
             Spacer()
@@ -19,13 +20,13 @@ struct TopBarView: View {
             label: {
                 Image("listicon")
             }
-
+            
             Spacer()
             Button {
                 if let todayNote = notes.first(
                     where: {
                         $0.hamzzang.id == selectedHamzzang.id &&
-                            Calendar.current.isDate($0.createdAt, inSameDayAs: Date())
+                        Calendar.current.isDate($0.createdAt, inSameDayAs: Date())
                     }
                 ) {
                     self.todayNote = todayNote
@@ -41,7 +42,7 @@ struct TopBarView: View {
             } label: {
                 Image("noteicon")
             }
-
+            
             Spacer()
             Button {
                 // 캘린더 뷰 이동
@@ -49,7 +50,7 @@ struct TopBarView: View {
             label: {
                 Image("calendaricon")
             }
-
+            
             Spacer()
         }.padding(.vertical, 30)
             .fullScreenCover(isPresented: $isPresentingNoteInput) {
@@ -59,8 +60,15 @@ struct TopBarView: View {
                 )
             }
             .fullScreenCover(isPresented: $isPresentingNoteEdit) {
+                NoteEditView(
+                    note: todayNote ?? Note(content: "", hamzzang: selectedHamzzang),
+                    selectedHamzzang: .constant(selectedHamzzang)
+                )
+                
                 if let note = todayNote {
                     NoteEditView(note: note, selectedHamzzang: .constant(selectedHamzzang))
+                } else {
+                    Text("노트를 불러올 수 없습니다")
                 }
             }
             .sheet(isPresented: $isPresentingNoteList) {
