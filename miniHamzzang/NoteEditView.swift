@@ -2,23 +2,26 @@ import SwiftData
 import SwiftUI
 
 struct NoteEditView: View {
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
     @Bindable var note: Note
     @Binding var selectedHamzzang: Hamzzang // 현재 선택된 햄짱이
     @State private var sortByNewest: Bool = true // 정렬 상태 토글
-    @State private var Note: String = ""
-
+    @State private var noteText: String = ""
     @Query private var notes: [Note] // SwiftData에서 필터링된 Note 가져오기
 
     let limit = 10
 
     var body: some View {
         VStack(spacing: 0) {
-            
             // MARK: 햄짱이 캐러셀
 
             Text("선택된햄짱여기: \(selectedHamzzang.name)")
                 .font(.custom("DungGeunMo", size: 24))
         }.padding(.bottom, 0)
+            .onAppear {
+                noteText = note.content
+            }
 
         // MARK: Note 수정창
 
@@ -30,7 +33,7 @@ struct NoteEditView: View {
                 Spacer()
             }.padding(.top, 0)
             VStack {
-                TextField("흠.. 실패 근육을 키운다는 건 뭘까?", text: $Note, axis: .vertical)
+                TextField("흠.. 실패 근육을 키운다는 건 뭘까?", text: $noteText, axis: .vertical)
                     .lineLimit(15, reservesSpace: true)
                     .foregroundColor(Color.black)
                     .font(.custom("DungGeunMo", size: 18))
@@ -49,7 +52,9 @@ struct NoteEditView: View {
 
         HStack {
             Button {
-//                addNoteContent(noteContent: "Sss")
+                note.content = noteText
+                try? modelContext.save()
+                dismiss()
             } label: {
                 Text("완료")
                     .font(.custom("DungGeunMo", size: 20))
@@ -65,7 +70,11 @@ struct NoteEditView: View {
                     .cornerRadius(10)
             }
 
-            Button {} label: {
+            Button {
+                modelContext.delete(note)
+                try? modelContext.save()
+                dismiss()
+            } label: {
                 Text("삭제")
                     .font(.custom("DungGeunMo", size: 20))
                     .padding(.horizontal, 20)
@@ -80,7 +89,9 @@ struct NoteEditView: View {
                     .cornerRadius(10)
             }
 
-            Button {} label: {
+            Button {
+                dismiss()
+            } label: {
                 Text("취소")
                     .font(.custom("DungGeunMo", size: 20))
                     .padding(.horizontal, 20)
