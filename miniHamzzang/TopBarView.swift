@@ -8,12 +8,13 @@ struct TopBarView: View {
     @State private var isPresentingNoteInput = false
     @State private var isPresentingNoteEdit = false
     @State private var todayNote: Note? = nil
+    @State private var isPresentingNoteList = false
 
     var body: some View {
         HStack {
             Spacer()
             Button {
-                // HamzzangListView 이동
+                isPresentingNoteList = true
             }
             label: {
                 Image("listicon")
@@ -62,13 +63,9 @@ struct TopBarView: View {
                     NoteEditView(note: note, selectedHamzzang: .constant(selectedHamzzang))
                 }
             }
-
-//                func todayNote(for hamzzang: Hamzzang) -> Note? {
-//                    notes.first {
-//                        $0.hamzzang?.id == hamzzang.id &&
-//                        Calendar.current.isDate($0.createdAt, inSameDayAs: Date())
-//                    }
-//                }
+            .fullScreenCover(isPresented: $isPresentingNoteList) {
+                NoteListView(selectedHamzzang: .constant(selectedHamzzang))
+            }
     }
 }
 

@@ -74,7 +74,9 @@ struct NoteInputView: View {
                         .cornerRadius(10)
                 }
                 
-                Button {} label: {
+                Button {
+                    dismiss()
+                } label: {
                     Text("취소")
                         .font(.custom("DungGeunMo", size: 20))
                         .padding(.horizontal, 20)
