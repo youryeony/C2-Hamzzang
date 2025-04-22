@@ -11,7 +11,7 @@ struct HamzzangMainView: View {
     @Query private var notes: [Note] // SwiftData에서 필터링된 Note 가져오기
     @Environment(\.modelContext) private var modelContext // SwiftData가 자동으로 주입해주는 DB 접근권한
     
-    @FocusState private var isNameFieldFocused: Bool // TextField 포커스 상태 감지
+    // @FocusState private var isNameFieldFocused: Bool // TextField 포커스 상태 감지
     
     var body: some View {
         ZStack {
@@ -101,32 +101,22 @@ struct HamzzangMainView: View {
                             TextField("이름을 입력하세요", text: $hamzzang.name)
                                 .padding(.horizontal, 30)
                                 .multilineTextAlignment(.center)
-                                .focused($isNameFieldFocused)
                                 .onChange(of: hamzzang.name) {
                                     if hamzzang.name.count > limit {
                                         hamzzang.name = String(hamzzang.name.prefix(limit))
                                     }
                                 }
-                                .onSubmit {
-                                    isNameFieldFocused = false
-                                }
-                                .onChange(of: isNameFieldFocused) { oldValue, newValue in
-                                    if oldValue == true && newValue == false && !hamzzang.name.isEmpty {
-                                        print("🎉 햄짱이 이름 입력 완료: \(hamzzang.name)")
-                                        // 햄짱이 등장 로직(애니메이션, 효과) 추가 가능
-                                    }
-                                }
-                        }
 
-                        Rectangle()
-                            .frame(height: 2)
-                            .foregroundColor(.gray)
-                            .padding(.horizontal, 30)
-                            .padding(.top, 4)
+                            Rectangle()
+                                .frame(height: 2)
+                                .foregroundColor(.gray)
+                                .padding(.horizontal, 30)
+                                .padding(.top, 2)
+                        }
+                        .padding(.horizontal, 30)
+                        .font(.custom("DungGeunMo", size: 24))
                     }
-                    .padding(.horizontal, 30)
-                    .font(.custom("DungGeunMo", size: 24))
-                        
+                    
                     // MARK: 하단 레벨, 생성날짜
                         
                     VStack(spacing: 8) {
