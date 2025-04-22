@@ -91,7 +91,6 @@ struct NoteInputView: View {
                         .cornerRadius(10)
                 }
             }
-            .padding(.bottom, 300)
             .padding(.vertical, 8)
         }
         .onAppear {

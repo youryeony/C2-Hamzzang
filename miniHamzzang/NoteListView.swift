@@ -57,7 +57,8 @@ struct NoteListView: View {
                 ForEach(notes) { note in
                     Button {
                         selectedNote = note
-                        isPresentingNoteEdit = true                    } label: {
+                        isPresentingNoteEdit = true
+                    } label: {
                         VStack(alignment: .leading, spacing: 4) {
                             Text(note.content)
                                 .font(.custom("DungGeunMo", size: 18))
