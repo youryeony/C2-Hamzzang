@@ -1,21 +1,29 @@
-//
-//  ContentView.swift
-//  miniHamzzang
-//
-//  Created by Doyeon Nam on 4/21/25.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selection = 1
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView(selection: $selection) {
+            HamzzangMainView(hamzzang: Hamzzang())
+                .tabItem {
+                    Image(selection == 1 ? "hamshill" : "hamshillbk")
+                }
+                .tag(1)
+
+            HamzzangListView()
+                .tabItem {
+                    Image(selection == 2 ? "hamface" : "hamfacebk")
+                }
+                .tag(2)
+
+            DataAnalysisView()
+                .tabItem {
+                    Image(selection == 3 ? "mydata" : "mydatabk")
+                }
+                .tag(3)
         }
-        .padding()
+        .font(.custom("DungGeunMo", size: 20))
     }
 }
 

@@ -6,17 +6,46 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A763F9C02DB691F800EC9583 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763F9B42DB691F800EC9583 /* ContentView.swift */; };
+		A763F9C12DB691F800EC9583 /* DataAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763F9B52DB691F800EC9583 /* DataAnalysisView.swift */; };
+		A763F9C22DB691F800EC9583 /* EditNameSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763F9B62DB691F800EC9583 /* EditNameSheet.swift */; };
+		A763F9C32DB691F800EC9583 /* Hamzzang.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763F9B72DB691F800EC9583 /* Hamzzang.swift */; };
+		A763F9C42DB691F800EC9583 /* HamzzangListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763F9B82DB691F800EC9583 /* HamzzangListView.swift */; };
+		A763F9C52DB691F800EC9583 /* HamzzangMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763F9B92DB691F800EC9583 /* HamzzangMainView.swift */; };
+		A763F9C62DB691F800EC9583 /* miniHamzzangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763F9BA2DB691F800EC9583 /* miniHamzzangApp.swift */; };
+		A763F9C72DB691F800EC9583 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763F9BB2DB691F800EC9583 /* Note.swift */; };
+		A763F9C82DB691F800EC9583 /* NoteEditorSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763F9BC2DB691F800EC9583 /* NoteEditorSheet.swift */; };
+		A763F9C92DB691F800EC9583 /* NoteInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763F9BD2DB691F800EC9583 /* NoteInputView.swift */; };
+		A763F9CA2DB691F800EC9583 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763F9BE2DB691F800EC9583 /* NoteListView.swift */; };
+		A763F9CB2DB691F800EC9583 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A763F9B12DB691F800EC9583 /* Preview Assets.xcassets */; };
+		A763F9CC2DB691F800EC9583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A763F9B32DB691F800EC9583 /* Assets.xcassets */; };
+		A763F9CF2DB6920A00EC9583 /* DungGeunMo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A763F9CE2DB6920A00EC9583 /* DungGeunMo.ttf */; };
+		A763F9D42DB7202E00EC9583 /* NoteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763F9D32DB7202E00EC9583 /* NoteEditView.swift */; };
+		A763F9D62DB7350D00EC9583 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763F9D52DB7350500EC9583 /* TopBarView.swift */; };
+		A763F9DA2DB7395300EC9583 /* HamCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A763F9D92DB7394600EC9583 /* HamCarouselView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		A763F9542DB65C7E00EC9583 /* miniHamzzang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miniHamzzang.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A763F9B12DB691F800EC9583 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A763F9B32DB691F800EC9583 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A763F9B42DB691F800EC9583 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A763F9B52DB691F800EC9583 /* DataAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAnalysisView.swift; sourceTree = "<group>"; };
+		A763F9B62DB691F800EC9583 /* EditNameSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameSheet.swift; sourceTree = "<group>"; };
+		A763F9B72DB691F800EC9583 /* Hamzzang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hamzzang.swift; sourceTree = "<group>"; };
+		A763F9B82DB691F800EC9583 /* HamzzangListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamzzangListView.swift; sourceTree = "<group>"; };
+		A763F9B92DB691F800EC9583 /* HamzzangMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamzzangMainView.swift; sourceTree = "<group>"; };
+		A763F9BA2DB691F800EC9583 /* miniHamzzangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = miniHamzzangApp.swift; sourceTree = "<group>"; };
+		A763F9BB2DB691F800EC9583 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		A763F9BC2DB691F800EC9583 /* NoteEditorSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditorSheet.swift; sourceTree = "<group>"; };
+		A763F9BD2DB691F800EC9583 /* NoteInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteInputView.swift; sourceTree = "<group>"; };
+		A763F9BE2DB691F800EC9583 /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
+		A763F9CE2DB6920A00EC9583 /* DungGeunMo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DungGeunMo.ttf; sourceTree = "<group>"; };
+		A763F9D32DB7202E00EC9583 /* NoteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditView.swift; sourceTree = "<group>"; };
+		A763F9D52DB7350500EC9583 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
+		A763F9D92DB7394600EC9583 /* HamCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamCarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		A763F9562DB65C7E00EC9583 /* miniHamzzang */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = miniHamzzang;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A763F9512DB65C7E00EC9583 /* Frameworks */ = {
@@ -32,7 +61,7 @@
 		A763F94B2DB65C7E00EC9583 = {
 			isa = PBXGroup;
 			children = (
-				A763F9562DB65C7E00EC9583 /* miniHamzzang */,
+				A763F9BF2DB691F800EC9583 /* miniHamzzang */,
 				A763F9552DB65C7E00EC9583 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +72,46 @@
 				A763F9542DB65C7E00EC9583 /* miniHamzzang.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A763F9B22DB691F800EC9583 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A763F9B12DB691F800EC9583 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A763F9BF2DB691F800EC9583 /* miniHamzzang */ = {
+			isa = PBXGroup;
+			children = (
+				A763F9CD2DB691FB00EC9583 /* Font */,
+				A763F9B22DB691F800EC9583 /* Preview Content */,
+				A763F9B32DB691F800EC9583 /* Assets.xcassets */,
+				A763F9B42DB691F800EC9583 /* ContentView.swift */,
+				A763F9B52DB691F800EC9583 /* DataAnalysisView.swift */,
+				A763F9B62DB691F800EC9583 /* EditNameSheet.swift */,
+				A763F9B72DB691F800EC9583 /* Hamzzang.swift */,
+				A763F9B82DB691F800EC9583 /* HamzzangListView.swift */,
+				A763F9B92DB691F800EC9583 /* HamzzangMainView.swift */,
+				A763F9D52DB7350500EC9583 /* TopBarView.swift */,
+				A763F9BA2DB691F800EC9583 /* miniHamzzangApp.swift */,
+				A763F9D92DB7394600EC9583 /* HamCarouselView.swift */,
+				A763F9BB2DB691F800EC9583 /* Note.swift */,
+				A763F9D32DB7202E00EC9583 /* NoteEditView.swift */,
+				A763F9BC2DB691F800EC9583 /* NoteEditorSheet.swift */,
+				A763F9BD2DB691F800EC9583 /* NoteInputView.swift */,
+				A763F9BE2DB691F800EC9583 /* NoteListView.swift */,
+			);
+			path = miniHamzzang;
+			sourceTree = "<group>";
+		};
+		A763F9CD2DB691FB00EC9583 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				A763F9CE2DB6920A00EC9583 /* DungGeunMo.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +128,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				A763F9562DB65C7E00EC9583 /* miniHamzzang */,
 			);
 			name = miniHamzzang;
 			packageProductDependencies = (
@@ -109,6 +175,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A763F9CB2DB691F800EC9583 /* Preview Assets.xcassets in Resources */,
+				A763F9CC2DB691F800EC9583 /* Assets.xcassets in Resources */,
+				A763F9CF2DB6920A00EC9583 /* DungGeunMo.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +188,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A763F9D42DB7202E00EC9583 /* NoteEditView.swift in Sources */,
+				A763F9C02DB691F800EC9583 /* ContentView.swift in Sources */,
+				A763F9C12DB691F800EC9583 /* DataAnalysisView.swift in Sources */,
+				A763F9C22DB691F800EC9583 /* EditNameSheet.swift in Sources */,
+				A763F9C32DB691F800EC9583 /* Hamzzang.swift in Sources */,
+				A763F9DA2DB7395300EC9583 /* HamCarouselView.swift in Sources */,
+				A763F9C42DB691F800EC9583 /* HamzzangListView.swift in Sources */,
+				A763F9C52DB691F800EC9583 /* HamzzangMainView.swift in Sources */,
+				A763F9C62DB691F800EC9583 /* miniHamzzangApp.swift in Sources */,
+				A763F9D62DB7350D00EC9583 /* TopBarView.swift in Sources */,
+				A763F9C72DB691F800EC9583 /* Note.swift in Sources */,
+				A763F9C82DB691F800EC9583 /* NoteEditorSheet.swift in Sources */,
+				A763F9C92DB691F800EC9583 /* NoteInputView.swift in Sources */,
+				A763F9CA2DB691F800EC9583 /* NoteListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +337,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"miniHamzzang/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = miniHamzzang/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -282,6 +366,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"miniHamzzang/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = miniHamzzang/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
