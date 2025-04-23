@@ -27,7 +27,7 @@ struct TopBarView: View {
             Button {
                 if let matchNote = notes.first(where: {
                     $0.hamzzang.id == selectedHamzzang.id &&
-                    Calendar.current.isDate($0.createdAt, inSameDayAs: Date())
+                        Calendar.current.isDate($0.createdAt, inSameDayAs: Date())
                 }) {
                     // 노트있으면 수정
                     self.todayNote = matchNote
@@ -54,7 +54,6 @@ struct TopBarView: View {
             Spacer()
         }
         .padding(.vertical, 30)
-
         // 노트 작성 뷰
         .fullScreenCover(isPresented: $isPresentingNoteInput) {
             NoteInputView(
@@ -68,10 +67,11 @@ struct TopBarView: View {
             if let note = todayNote {
                 NoteEditView(
                     note: note,
-                    selectedHamzzang: .constant(selectedHamzzang))
-            } else{
-                Text("안되지롱")
-                //뷰 바깥에서 조건을 분기해서 여기 넘길 뷰를 정하는 구조가 뭔데...
+                    selectedHamzzang: .constant(selectedHamzzang)
+                )
+            } else {
+                Text("노트를 불러올 수 없음")
+                // 뷰 바깥에서 조건을 분기해서 여기 넘길 뷰를 정하는 구조가 뭔데...
             }
         }
 

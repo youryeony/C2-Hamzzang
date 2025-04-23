@@ -29,7 +29,7 @@ struct NoteInputView: View {
                         .font(.custom("DungGeunMo", size: 18))
                         .foregroundStyle(Color.neonpink)
                     Spacer()
-                }.padding(.bottom, 0)
+                }.padding(.top, 0)
                 VStack {
                     TextField("흠.. 실패 근육을 키운다는 건 뭘까?", text: $noteText, axis: .vertical)
                         .lineLimit(15, reservesSpace: true)

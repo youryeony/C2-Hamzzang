@@ -6,10 +6,16 @@ struct HamzzangMainView: View {
     
     let limit = 10
     
+    // MARK: - UI
+    
     @State private var selectedDate = Date.now
     @State private var hamNote: String = ""
     @Query private var notes: [Note] // SwiftData에서 필터링된 Note 가져오기
     @Environment(\.modelContext) private var modelContext // SwiftData가 자동으로 주입해주는 DB 접근권한
+    
+    // 이미지 업데이트 트리거
+    @FocusState private var isNameFocused: Bool
+    @State private var isNameConfirmed: Bool = false
     
     // @FocusState private var isNameFieldFocused: Bool // TextField 포커스 상태 감지
     
@@ -38,6 +44,7 @@ struct HamzzangMainView: View {
 
                 TopBarView(selectedHamzzang: hamzzang)
                 // 새 인스턴스가 아닌 현재 햄짱이 이름,ID가 들어오도록 Hamzzang() 대신 hamzzang
+                
                 ScrollView {
                     Spacer()
                     VStack(spacing: 20) {
@@ -77,7 +84,7 @@ struct HamzzangMainView: View {
                         // MARK: 햄짱이 이미지
                         
                         VStack {
-                            if hamzzang.name.isEmpty {
+                            if !isNameConfirmed || hamzzang.name.isEmpty {
                                 Image("HamzzangX")
                                     .resizable()
                                     .scaledToFit()
@@ -94,12 +101,21 @@ struct HamzzangMainView: View {
                             // MARK: 햄짱이 이름칸
                             
                             TextField("이름을 입력하세요", text: $hamzzang.name)
+                                .submitLabel(.done)
                                 .padding(.horizontal, 30)
                                 .multilineTextAlignment(.center)
+                                .focused($isNameFocused) // 포커스 연동
                                 .onChange(of: hamzzang.name) {
                                     if hamzzang.name.count > limit {
                                         hamzzang.name = String(hamzzang.name.prefix(limit))
                                     }
+                                    // 편집 중이니까 완료 상태는 false로
+                                    isNameConfirmed = false
+                                }
+                                // 키보드 완료
+                                .onSubmit {
+                                    isNameFocused = false
+                                    isNameConfirmed = true // 확정상태
                                 }
 
                             Rectangle()
@@ -147,12 +163,3 @@ func dateToString(date: Date) -> String {
     return HamzzangMainView(hamzzang: sampleHamzzang)
         .modelContainer(preview)
 }
-
-//            VStack(spacing: 20) {
-//                TextField("이름을 입력하세요", text: $hamzzang.name)
-//                    .textFieldStyle(RoundedBorderTextFieldStyle())
-//                    .padding()
-//
-//                Text("\(hamzzang.createdAt.formatted(date: .long, time: .omitted))")
-//                Text("Lv.\(hamzzang.level)")
-//            }
